@@ -1,6 +1,12 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
+import { ThirdwebProvider } from '@thirdweb-dev/react'
+import network from './utils/network'
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+  <ThirdwebProvider desiredChainId={network}>
+    <Component {...pageProps} />
+  </ThirdwebProvider>
+  )
 }
