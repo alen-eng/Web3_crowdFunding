@@ -6,34 +6,35 @@ import campeignImages from '../Data/campeignImages.js'
 import Link from 'next/link';
 import React, { useState } from 'react'
 import { PartialClaimConditionInputSchema } from '@thirdweb-dev/sdk'
-//import Slider from "react-slick"
-
-// const sliderSettings = {
-//   dots: true,
-//   infinite: true,
-//   speed: 500,
-//   slidesToShow: 1,
-//   slidesToScroll: 1,
-//   //console.log(imageslide[0].url);
-//  }
+import { useRouter } from 'next/router'
 
 
 
 export default function Home() {
    const [currentslide, setcurrentslide]=useState(0);
    const [textshow, settextshow]=useState(false);
-//  const bgImageStyle={
-//    backgroundimage: `url(${imageslide[currentslide].url})`,
-//    backgroundSize:'cover',
-//    backgroundPosition:'center'
-//  }
-// const settings = {
-//   dots: true,
-//   infinite: true,
-//   speed: 500,
-//   slidesToShow: 1,
-//   slidesToScroll: 1
-// };
+   const [name, setName] = useState('');
+   const [subject, setSubject] = useState('');
+   const [email, setEmail] = useState('');
+   const [message, setMessage] = useState('');
+const router= useRouter()
+   const handleEnquiry = async (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      let res = await fetch("http://localhost:3000/api/enquiry", {
+      method: "POST",
+      body: JSON.stringify({
+         name:name,
+        email: email,
+        subject: subject,
+        message:message,
+      }),
+    });
+    res = await res.json();
+  if(res.status===200){
+    alert("Enquiry Email sent successfully!!")
+    return router.push('/')
+    }
+    }
 
 
   return (
@@ -229,30 +230,30 @@ export default function Home() {
          <p className=' text-green-400 font-semibold font-serif'>CALL TO ACTION</p>
          <h1 className='text-4xl font-bold pt-3 font-serif'>Let's Create Something</h1>
          <h1 className='text-4xl font-bold font-serif'>Great Together !</h1>
-			<form className='pt-8' method="post">
+			<form className='pt-8' onSubmit={handleEnquiry} method="post">
 				<div>
 					<div className='mt-4' >
 						<div className=''>
-						<input className='h-12  w-64 pl-3 shadow-md' type="text" name="name" id="name" placeholder="Name*" ></input>
+						<input className='h-12  w-64 pl-3 shadow-md' type="text" name="name" id="name" onChange={(event) => setName(event.target.value)} placeholder="Name*" ></input>
 						</div>
 					</div>
 					<div className='mt-4'>
 						<div >
-						<input className='h-12 w-64 pl-3 shadow-md' type="email"  name="email" id="email" placeholder="Email*" ></input>
+						<input className='h-12 w-64 pl-3 shadow-md' type="email"  name="email" id="email" onChange={(event) => setEmail(event.target.value)} placeholder="Email*" ></input>
 						</div>
 					</div>
 				</div>
 				<div >
 					<div className='mt-4' >
 						<div className='flex' >
-						<input className='h-12  w-64 pl-3 shadow-md' type="text"  name="Subject" id="Subject" placeholder="Subject*" ></input>
+						<input className='h-12  w-64 pl-3 shadow-md' type="text"  name="Subject" id="Subject" onChange={(event) => setSubject(event.target.value)}placeholder="Subject*" ></input>
 						</div>
 					</div>
 				</div>
 				<div >
 					<div className='mt-4'>
 						<div >
-						<textarea className='h-32 w-72  pt-3 pl-3 shadow-md ' name="message" id="message" placeholder="Your message.." ></textarea>
+						<textarea className='h-32 w-72  pt-3 pl-3 shadow-md ' name="message" id="message" onChange={(event) => setMessage(event.target.value)} placeholder="Your message.." ></textarea>
 						</div>
 					</div>
 				</div>
