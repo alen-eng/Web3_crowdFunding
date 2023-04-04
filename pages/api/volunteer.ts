@@ -15,7 +15,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
                   service: 'gmail',
                   auth: {
                     user:'shoppingcarta7@gmail.com',
-                    pass:'cluayruoyjxvhlmh'
+                    pass:process.env.PASS_EMAIL
+
                   }
                 });
                 
