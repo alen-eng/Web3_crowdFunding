@@ -13,7 +13,7 @@ import { BanknotesIcon,WalletIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
 import { ethers } from 'ethers'
-import { daysLeft } from './utils'
+import { daysLeft } from '../utils'
 import CountBox from '../components/CountBox'
 
 const Home: NextPage = () => {
