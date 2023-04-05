@@ -34,6 +34,7 @@ export default function Verify() {
     res = await res.json();
   if(res.status===200){
     alert("Password reset successful!!")
+    return router.push('/login')
     }
   else if(res.status===401){
     alert("Attempt unsuccessful!!")
