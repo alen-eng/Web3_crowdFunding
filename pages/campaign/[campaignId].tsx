@@ -23,8 +23,8 @@ import { useRouter } from 'next/router';
 import React, { FormEvent, useEffect, useState } from 'react';
 //import Countdown from 'react-countdown';
 import Header from '../../components/Header';
-import network from './../utils/network';
-import { calculateBarPercentage, daysLeft } from './../utils';
+import network from '../../utils/network';
+import { calculateBarPercentage, daysLeft } from '../../utils';
 import CountBox from '../../components/CountBox';
 type Props = {}
 
