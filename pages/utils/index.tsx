@@ -20,3 +20,5 @@ export const daysLeft = (deadline: string | number | Date) => {
     img.onload = () => callback(true);
     img.onerror = () => callback(false);
   };
+
+export default checkIfImage 
