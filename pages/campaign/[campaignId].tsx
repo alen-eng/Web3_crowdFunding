@@ -45,8 +45,8 @@ function CampaignCard (){
 
     const { contract } = useContract(process.env.NEXT_PUBLIC_CROWDFUNDING_CONTRACT);
    // const { mutateAsync: donateToCampaign,isLoading:loading, } = useContractWrite(contract, "donateToCampaign",)
-    const { data: donators, isLoading} =  useContractRead(contract, "getDonators",campaignId)
-    const { data: campaign,isLoading:load } = useContractRead(contract, "campaigns",campaignId)
+    const { data: donators, isLoading} =  useContractRead(contract, "getDonators",campaignId as any)
+    const { data: campaign,isLoading:load } = useContractRead(contract, "campaigns",campaignId as any)
     //const [campaignDetail, setcampaignDetail] = useState({});
    //   const [remDate, setremDate] = useState({});
     // const cam = campaign?.map((campaign:any,) => {
@@ -128,7 +128,7 @@ const target= e.target as typeof e.target & {
  // ),
 //console.log(campaignId ,target.elements.Amount.value as any),
 //const  {contract } = useContract(process.env.NEXT_PUBLIC_CROWDFUNDING_CONTRACT);
- contract?.call('donateToCampaign', campaignId, { value: ethers.utils.parseEther(target.elements.Amount.value.toString())}),
+ contract?.call('donateToCampaign', campaignId as any, { value: ethers.utils.parseEther(target.elements.Amount.value.toString())}),
       {
           onSuccess(data:any, variables:any, context:any) {
               console.log("Success : ", data, variables, context);
@@ -150,7 +150,7 @@ const target= e.target as typeof e.target & {
               { useraddress ? (
                 <button onClick={disconnect} className='connectWalletBtn'> Hi, {useraddress.slice(0,5)+ "...."+ useraddress.slice(-6)} </button>
              ) : (
-            <button onClick={connectwithMetamask} className='connectWalletBtn'>Connect your wallet </button>
+            <button onClick={()=>connectwithMetamask} className='connectWalletBtn'>Connect your wallet </button>
             )}</div>
             <div className="flex  md:flex-row justify-center mt-10 xl:space-x-96">
              <div className=" flex flex-col pt-8">
