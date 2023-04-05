@@ -1,6 +1,4 @@
 {
-  "name": "charity_web3app",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
