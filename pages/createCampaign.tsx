@@ -12,7 +12,7 @@ import {
     useCreateDirectListing
 } from '@thirdweb-dev/react'
 import { ChainId, NFT , NATIVE_TOKENS, NATIVE_TOKEN_ADDRESS} from '@thirdweb-dev/sdk';
-import network from './utils/network';
+import network from '../utils/network';
 import { useRouter } from 'next/router';
 
 
