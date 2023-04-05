@@ -18,7 +18,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             return res.status(409).json({ status:409, msg: "Password should be 8 characters long" })
 
         const hashedPassword = await hash(password, 12)
-        User.updateOne({
+        User.findOneAndUpdate({email:email},{
             password: hashedPassword
          }).then(data => {
             return res.status(201).json({
