@@ -20,3 +20,5 @@ export const connectToMongoDB = async () => {
         return Promise.reject(error)
     }
 }
+
+export default connectToMongoDB
