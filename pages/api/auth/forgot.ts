@@ -4,7 +4,7 @@ import User from "../../../models/user"
 import { IUser } from "../../../types"
 import jwt from "jsonwebtoken"
 import nodemailer from "nodemailer"
-import { connectToMongoDB } from "../../utils/connection"
+import { connectToMongoDB } from "../../../utils/connection"
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     connectToMongoDB().catch(err => res.json(err))
