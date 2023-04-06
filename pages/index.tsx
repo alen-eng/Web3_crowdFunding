@@ -20,7 +20,7 @@ export default function Home() {
 const router= useRouter()
    const handleEnquiry = async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      let res = await fetch("https://web3-crowd-funding-qn2ygga76-myportfolio312-gmailcom.vercel.app/api/enquiry", {
+      let res = await fetch("https://web3-crowd-funding.vercel.app/api/enquiry", {
       method: "POST",
       body: JSON.stringify({
          name:name,
