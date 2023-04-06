@@ -22,7 +22,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
                    email:email
                  }
                  const token=jwt.sign(payload,secret,{expiresIn:'15m'})
-                 const link=`https://localhost:3000/${email}/${token}`;
+                 const link=`https://web3-crowd-funding.vercel.app/${email}/${token}`;
                  var transporter = nodemailer.createTransport({
                   host:'smtp.gmail.com',
                   port:587,
