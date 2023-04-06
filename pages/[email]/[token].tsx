@@ -24,7 +24,7 @@ export default function Verify() {
     };
     const handleReset = async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      let res = await fetch("http://localhost:3000/api/auth/reset", {
+      let res = await fetch("https://web3-crowd-funding.vercel.app/api/auth/reset", {
       method: "POST",
       body: JSON.stringify({
         email: email,
