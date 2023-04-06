@@ -19,7 +19,7 @@ export default function Volunteer() {
   const handleVolunteer = async (event: React.FormEvent<HTMLFormElement>) => {
 
     event.preventDefault();
-    let res = await fetch("http://localhost:3000/api/volunteer", {
+    let res = await fetch("https://web3-crowd-funding.vercel.app/api/volunteer", {
     method: "POST",
     body: JSON.stringify({
       name: name,
