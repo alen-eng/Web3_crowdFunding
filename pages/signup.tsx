@@ -25,7 +25,7 @@ export default function Signup() {
   const handleSignup = async (event: React.FormEvent<HTMLFormElement>) => {
     //var req={fullName, email, password}
     event.preventDefault();
-    let res = await fetch("http://localhost:3000/api/auth/signup", {
+    let res = await fetch("https://web3-crowd-funding.vercel.app/api/auth/signup", {
     method: "POST",
     body: JSON.stringify({
       fullName: fullName,
