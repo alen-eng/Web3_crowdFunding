@@ -17,7 +17,7 @@ function Header({}: Props) {
             { address ? (
                 <button onClick={disconnect} className='connectWalletBtn'> Hi, {address.slice(0,5)+ "...."+ address.slice(-6)} </button>
              ) : (
-            <div onClick={connectwithMetamask} className='connectWalletBtn'>Connect your wallet </div>
+            <button onClick={connectwithMetamask} className='connectWalletBtn'>Connect your wallet </button>
             )}
 
           <p className='hidden md:inline-flex font-serif'>Charitytex </p>
