@@ -59,7 +59,7 @@ function Header({}: Props) {
           <input className='flex-1 outline-none' placeholder='Search for Anything' type='text'/>
         </div>
         <button className='hidden sm:inline bg-blue-600 text-white px-5 md:px-10 py-2 border-2 border-blue-600'>Search</button>
-        {address == process.env.NEXT_PUBLIC_ROOT_USER ? '' :
+        {address == process.env.ROOT_USER ? '' :
         <Link href='/createCampaign' >
         <button className='border-2 border-blue-600 px-5 md:px-10 py-2 text-blue-600 hover:bg-blue-600/50 hover:text-white cursor-pointer'>Create campaign</button>
         </Link>  
