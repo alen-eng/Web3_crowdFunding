@@ -19,7 +19,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    let res = await fetch("http://localhost:3000/api/auth/login", {
+    let res = await fetch("https://web3-crowd-funding.vercel.app/api/auth/login", {
     method: "POST",
     body: JSON.stringify({
       email: email,
