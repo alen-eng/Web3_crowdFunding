@@ -14,7 +14,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         const { email} = JSON.parse(req.body)
         const userExists = await User.findOne({email})
         if (userExists!=null) {
-              res.status(200).json({ status:200,})
+              
               const JWT_SECRETE='5fbtg5eg';
               
                  const secret= JWT_SECRETE + email;
@@ -46,6 +46,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
                     console.log(error);
                   } else {
                     console.log('Email sent: ' + info.response);
+                     res.status(200).json({ status:200,})
                   }
                 });
               
