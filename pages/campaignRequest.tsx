@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from 'react';
-import { useAddress, useContract , useContractWrite } from '@thirdweb-dev/react';
+import { useAddress, useContract , } from '@thirdweb-dev/react';
 import CampaignHeader from '../components/CampaignHeader';
 import { useRouter } from 'next/router';
 type Props = {}
@@ -34,7 +34,7 @@ function addItems({}: Props) {
     image : image,
    }
       try{
-           const data = await contract.call("grantRole", '0x9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a6' as any , address as any)
+           const data = await contract.call("grantRole",'0x9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a6' as BytesLike ,address)
            console.log(data);
           const tx=await contract.mintTo(address, metadata);
           const receipt= tx.receipt;
