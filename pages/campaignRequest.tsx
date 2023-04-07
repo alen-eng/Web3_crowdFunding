@@ -38,6 +38,7 @@ function addItems({}: Props) {
           "minter",
           address,
         );
+        console.log(data);
           const tx=await contract.mintTo(address, metadata);
           const receipt= tx.receipt;
           const tokenId = tx.id;
