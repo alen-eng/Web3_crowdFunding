@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from 'react';
-import { useAddress, useContract } from '@thirdweb-dev/react';
+import { useAddress, useContract , useContractWrite } from '@thirdweb-dev/react';
 import CampaignHeader from '../components/CampaignHeader';
 import { useRouter } from 'next/router';
 type Props = {}
@@ -13,6 +13,7 @@ function addItems({}: Props) {
  process.env.NEXT_PUBLIC_CROWDFUND_COLLECTION_CONTRACT,
  "nft-collection"
   );
+  const { mutateAsync: grantRole, isLoading } = useContractWrite(contract, "grantRole")
   const mintNft= async (e : FormEvent<HTMLFormElement>) => {
    e.preventDefault();
    if(!contract || !address) return;
@@ -33,6 +34,7 @@ function addItems({}: Props) {
     image : image,
    }
       try{
+          const data = await grantRole(['minter', address]);
           const tx=await contract.mintTo(address, metadata);
           const receipt= tx.receipt;
           const tokenId = tx.id;
