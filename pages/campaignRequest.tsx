@@ -2,6 +2,7 @@ import React, { FormEvent, useState } from 'react';
 import { useAddress, useContract , } from '@thirdweb-dev/react';
 import CampaignHeader from '../components/CampaignHeader';
 import { useRouter } from 'next/router';
+import { BytesLike } from 'ethers';
 type Props = {}
 
 function addItems({}: Props) {
