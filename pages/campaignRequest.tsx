@@ -35,7 +35,7 @@ function addItems({}: Props) {
     image : image,
    }
       try{
-           const data = await grantRole(grant as any);
+           const data = await grantRole([grant as any]);
            console.log(data);
           const tx=await contract.mintTo(address, metadata);
           const receipt= tx.receipt;
