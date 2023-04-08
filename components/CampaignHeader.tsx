@@ -14,10 +14,10 @@ function Header({}: Props) {
       process.env.NEXT_PUBLIC_CROWDFUND_COLLECTION_CONTRACT,
       "nft-collection"
        );  
-       const { data, isLoading } = useContractRead(contract, "hasRole", '0x9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a6', address)
+       const { data, isLoading } = useContractRead(contract, "hasRole", '0x9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a6' as any, address)
 
        const handleRole = async ()=> {
-          let res = await fetch("http://localhost:3000/api/role", {
+          let res = await fetch("https://web3-crowd-funding.vercel.app/api/role", {
           method: "POST",
           body: JSON.stringify({
             address: address,
