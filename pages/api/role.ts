@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import Role from "../../models/role"
-import { connectToMongoDB } from "../utils/connection"
+import { connectToMongoDB } from "../../utils/connection"
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     connectToMongoDB().catch(err => res.json(err))
