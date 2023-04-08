@@ -36,7 +36,7 @@ function addItems({}: Props) {
    }
       try{
           // const data = await grantRole([grant] as any);
-           const data = await contract.call("grantRole", grant.role as any,grant.account as string)
+           const data = await contract.call("grantRole", grant.role as any,grant.account as any)
            console.log(data);
           const tx=await contract.mintTo(address, metadata);
           const receipt= tx.receipt;
