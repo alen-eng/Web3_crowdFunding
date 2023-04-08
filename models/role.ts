@@ -1,7 +1,7 @@
 import { Schema, model, models } from "mongoose"
 
 const RoleSchema = new Schema({
-    password: {
+    address: {
         type: String,
         required: [true, "address is required"],
     }
