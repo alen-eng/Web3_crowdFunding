@@ -46,7 +46,7 @@ if(count==cam.length){
 cam==null;
 }
 else cam=cam.filter((item:any)=>item!=null); }
-console.log(cam)
+
   return (
     <div>
   <CampaignHeader/>
