@@ -1,5 +1,5 @@
 import React from 'react'
-import { useAddress , useDisconnect , useMetamask } from '@thirdweb-dev/react';
+import { useAddress , useDisconnect ,useContract,useContractRead, useMetamask } from '@thirdweb-dev/react';
 import Link from 'next/link';
 import {ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import   {BellIcon, ShoppingCartIcon} from  '@heroicons/react/24/outline';
@@ -10,6 +10,27 @@ function Header({}: Props) {
     const connectwithMetamask = useMetamask();
     const disconnect = useDisconnect();
     const address = useAddress();
+    const {contract}= useContract (
+      process.env.NEXT_PUBLIC_CROWDFUND_COLLECTION_CONTRACT,
+      "nft-collection"
+       );  
+       const { data, isLoading } = useContractRead(contract, "hasRole", '0x9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a6', address)
+
+       const handleRole = async ()=> {
+          let res = await fetch("http://localhost:3000/api/role", {
+          method: "POST",
+          body: JSON.stringify({
+            address: address,
+          }),
+        });
+        res = await res.json();
+        if(res.status==201){
+          alert("Role request added successfully")
+        }
+        else{
+          alert("Role request failed")
+        }
+        }
   return (
     <div className='max-w-6xl mx-auto'>
     <nav className='flex justify-between mt-2'>
@@ -28,14 +49,13 @@ function Header({}: Props) {
         <p className='headerLink'>food</p>
         <p className='headerLink'>Health</p>
         <p className='headerLink'>Education</p>
+        {data==true ?(
         <Link href='/campaignRequest'>
-        <button className='bg-blue-500 text-white font-bold py-2 px-4 rounded cursor-pointer;'>Campaign request</button>
-        </Link>
-        {/* <Link href='/addItems' className='flex items-center hover:link'>Add to inventory
-        <ChevronDownIcon className='h-4'/>
-        </Link> */}
-   {/* <BellIcon className='h-6 w-6'/>
-   <ShoppingCartIcon className='h-6 w-6'/> */}
+        <button className='bg-blue-500 text-white font-bold py-2 px-4 rounded cursor-pointer'>Campaign request</button>
+        </Link> ) : (
+        <button className='bg-blue-500 text-white font-bold py-2 px-4 rounded cursor-pointer' onClick={handleRole}>Mint Request</button>
+         ) }
+      
       </div>
       </nav>
       <hr className='mt-2'/>
