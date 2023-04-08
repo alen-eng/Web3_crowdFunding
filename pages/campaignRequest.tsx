@@ -14,6 +14,7 @@ function addItems({}: Props) {
  "nft-collection"
   );
   const { mutateAsync: grantRole, isLoading } = useContractWrite(contract, "grantRole")
+  const grant={role:'0x9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a6', account:address as string}
   const mintNft= async (e : FormEvent<HTMLFormElement>) => {
    e.preventDefault();
    if(!contract || !address) return;
@@ -34,7 +35,7 @@ function addItems({}: Props) {
     image : image,
    }
       try{
-           const data = await grantRole(['0x9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a6' as any ,address]);
+           const data = await grantRole(grant as any);
            console.log(data);
           const tx=await contract.mintTo(address, metadata);
           const receipt= tx.receipt;
