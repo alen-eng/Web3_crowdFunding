@@ -8,7 +8,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method === "POST") {
         if (!req.body) return res.status(400).json({ status:400, })
         const { address} = JSON.parse(req.body)
-        console.log(address)
+        
         Role.create({
             address:address
          }).then(data => {
