@@ -53,7 +53,7 @@ function Header({}: Props) {
         <Link href='/campaignRequest'>
         <button className='bg-blue-500 text-white font-bold py-2 px-4 rounded cursor-pointer'>Campaign request</button>
         </Link> ) : (
-        <button className='bg-blue-500 text-white font-bold py-2 px-4 rounded cursor-pointer' onClick={handleRole}>Mint Request</button>
+        <button className='bg-blue-500 text-white font-bold py-2 px-4 rounded cursor-pointer' onClick={handleRole}>Request Access</button>
          ) }
       
       </div>
