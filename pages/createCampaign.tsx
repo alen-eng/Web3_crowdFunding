@@ -7,6 +7,7 @@ import {
     useNetwork,
     useNetworkMismatch,
     useOwnedNFTs,
+    useNFTs,
     useContractWrite,
     useCreateAuctionListing,
     useCreateDirectListing
@@ -30,8 +31,8 @@ function createCampaign({}: Props) {
         process.env.NEXT_PUBLIC_CROWDFUND_COLLECTION_CONTRACT,
         'nft-collection'
     );
-
-  const ownedNFTs= useOwnedNFTs(collectionContract , address);
+  const { data, isLoading:loading, error } = useNFTs(collectionContract);
+  //const ownedNFTs= useOwnedNFTs(collectionContract , address);
 
   const networkMismatch = useNetworkMismatch();
   const [,switchNetwork]= useNetwork();
@@ -86,7 +87,7 @@ const target= e.target as typeof e.target & {
             <hr className='mb-5'/>
             <p>Below you will find the Campaign requests .</p>
             <div className='flex overflow-x-scroll space-x-2 p-4'>
-               {ownedNFTs?.data?.map(nft => (
+               {data?.map(nft => (
                     <div className={`flex flex-col space-y-2 card min-w-fit border-2 bg-gray-100
                      ${nft.metadata.id=== selectedNFT?.metadata.id ? 'border-black' : 'border-transparent'}`}
                      key={nft.metadata.id}
