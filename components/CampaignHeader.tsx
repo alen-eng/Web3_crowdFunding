@@ -14,7 +14,7 @@ function Header({}: Props) {
       process.env.NEXT_PUBLIC_CROWDFUND_COLLECTION_CONTRACT,
       "nft-collection"
        );  
-       const { data, isLoading } = useContractRead(contract, "hasRole", '0x9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a6' as any, address as string)
+       const { data, isLoading } = useContractRead(contract, "hasRole", ['0x9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a6' as any, address as string]);
           if(data){ console.log(data) }
        const handleRole = async ()=> {
           if(address==null) return alert("Please connect your wallet")
