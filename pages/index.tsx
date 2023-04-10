@@ -40,12 +40,8 @@ const router= useRouter()
   return (
     <div>
         <Header />
-
-        {/*  {imageslide?.map (data  =>(  */}
+   
         <div className='relative mx-auto '>
-
-           {/*   <div style={bgImageStyle}></div> */}
-
            <Image
               src={imageslide[currentslide].url}
               alt='Bgimage'
@@ -67,7 +63,6 @@ const router= useRouter()
         </div>
 
         <div
-           //  className=' flex flex-row xl:ml-96 lg:ml-32 md:ml-24 sm:ml-8 pt-24 pb-12 max-w-5xl '
            className=' grid  place-items-center  max-w-5xl xl:ml-96 lg:ml-32 sm:ml-2 pt-24'
         >
            <div className='flex flex-row'>
@@ -87,11 +82,6 @@ const router= useRouter()
                        Nam tempor, nunc non suscipit dignissim, sem ligula m
                        aximus diam, quis condimentum ante tortor at sem. Sed rutrum lorem in
                        diam hendrerit semper</p> : ''}
-                 {/* <p className=' text-green-200 text-xl mt-3 font-bold absolute xl:top-24 sm:top-20  2xl:left-1/4 xl:left-96 lg:left-44 md:left-32 sm:left-16 max-w-2xl'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras convallis sem quis orci por
-                    ta lacinia eget ac enim. Curab
-          itur ullamcorper tincidunt purus, ac interdum urna convallis in. Nulla euismod finibus dui, at biben
-                dum dolor scelerisque vitae. Praesent faucibus nulla in egestas tincidunt</p> */}
                  {textshow ? '' :
                     <button className='h-10 w-32  text-black font-semibold rounded-full border-black border-2  hover:bg-gray-200' onClick={() => { settextshow(true) } }>
                        Show more </button>}
@@ -107,8 +97,6 @@ const router= useRouter()
               <div className=''>
 
                  <div className='flex flex-row pt-12'>
-
-                    {/* {campeignImages?.map(data =>{  */}
                     <div className='max-w-sm ml-5 rounded-lg border-2 border-slate-300'>
                        <div className='overflow-hidden'>
                           <Image src={'/assets/acheivement.jpg'} alt='img' height={10} width={380} className='hover:scale-105 transition-all duration-105 ease-out' />
@@ -167,8 +155,6 @@ const router= useRouter()
               <div>
 
                  <div className='flex flex-row pt-12 transition-x-10'>
-
-                    {/* {campeignImages?.map(data =>{  */}
                     <div className='max-w-sm ml-5 rounded-lg border border-black bg-white hover:scale-105 transition-all duration-105 ease-out'>
                        <div className='p-4'>
                           <p className='leading-7 italic'> " This is a  Badge issued by IBM for successful completion of the digital course 'What is Data Scie
@@ -270,22 +256,6 @@ const router= useRouter()
 
      <section className=' pt-24 pb-12 flex justify-center bg-[#f2f2fc]'>
       <div className='flex '>
-
-      {/* <div className=' bg-gray-600 rounded absolute w-3/4'>
-         <div className='flex flex-col'>
-         <Image width={100} height={10} alt="img" src={'/assets/logo.png'}  className=''/>
-         <div>alen</div>
-         </div> */}
-         
-       {/* <div className='flex flex-col rounded px-16 py-6 bg-orange-500 max-w-3xl'>
-         <h1 className=' text-center text-3xl font-bold text-white'>  Want to be a Volunteer??</h1>
-         <div className='flex flex-row'>
-          <p className=' text-center text-lg font-thin  text-white pt-3 '>Fill the form ASAP . We will reach you out shortly!!
-           AP . We will reach you out shortly!!  We will reach you out  We will reach you out  We will reach you out</p> 
-          <button className=' text-center text-white w-32 h-8 ml-2 mt-4 px-2 rounded-full transition-all hover:scale-105 border-2 border-white'>Volunteer</button>
-          </div>
-       </div> */}
-       
        <div className=' bg-gray-600 rounded '>
 
        <div className='flex flex-col -mt-24 sm:ml-28 md:ml-40 lg:ml-52 xl:ml-96  rounded px-16 py-6 bg-orange-500 w-2/4 '>
