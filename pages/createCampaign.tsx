@@ -6,17 +6,11 @@ import {
     MediaRenderer,
     useNetwork,
     useNetworkMismatch,
-    useOwnedNFTs,
     useNFTs,
-    useContractWrite,
-    useCreateAuctionListing,
-    useCreateDirectListing
 } from '@thirdweb-dev/react'
-import { ChainId, NFT , NATIVE_TOKENS, NATIVE_TOKEN_ADDRESS} from '@thirdweb-dev/sdk';
+import { NFT } from '@thirdweb-dev/sdk';
 import network from '../utils/network';
 import { useRouter } from 'next/router';
-
-
 
 type Props = {}
 
@@ -32,11 +26,9 @@ function createCampaign({}: Props) {
         'nft-collection'
     );
   const { data, isLoading:loading, error } = useNFTs(collectionContract);
-  //const ownedNFTs= useOwnedNFTs(collectionContract , address);
-
+ 
   const networkMismatch = useNetworkMismatch();
   const [,switchNetwork]= useNetwork();
-  //const {mutateAsync: createCampaign,isLoading } = useContractWrite(contract,'createCampaign');
    
 const handleCreateCampaign= async (e: FormEvent<HTMLFormElement>) =>{
     e.preventDefault();
@@ -52,32 +44,9 @@ const target= e.target as typeof e.target & {
                Target:{value: number}, Deadline:{value: string},
             };
         };
-//const {Address,Title,Description,Target,Deadline,Image} = target.elements;
- console.log([
-    selectedNFT.metadata.address ,
-    target.elements.Title.value ,
-     target.elements.Description.value ,
-      target.elements.Target.value ,
-        new Date(target.elements.Deadline.value).getTime() ,
-        selectedNFT.metadata.image]);
-   // createCampaign([selectedNFT.metadata.address,
-   // target.elements.Title.value,
-    // target.elements.Description.value,
-     // target.elements.Target.value,
-     //   new Date(target.elements.Deadline.value).getTime(),
-    //    selectedNFT.metadata.image ],
+    
       await contract?.call("createCampaign", [selectedNFT.metadata.address,target.elements.Title.value ,
             target.elements.Description.value, target.elements.Target.value,new Date(target.elements.Deadline.value).getTime() ,selectedNFT.metadata.image], )
-    //{
-     //       onSuccess(data, variables, context) {
-     //           console.log("Success : ", data, variables, context);
-      //          router.push('/');
-      //      },
-     //       onError(error, variables, context) {
-     //           console.log('Error : ', error, variables, context);
-    //        },
-    //         }
-   // );
 
 };
   return (
@@ -134,9 +103,6 @@ const target= e.target as typeof e.target & {
                         <input type='date' name='Deadline'
                         placeholder='Eg: 12/10/2008' className='bg-gray-100 p-5'/>
 
-                       {/* <label className='border-r font-light'>Image</label>
-                        <input type='text' name='Image'
-                        placeholder='Images' className='bg-gray-100 p-5'/> */}
                     </div>
                     <button className='bg-blue-600 text-white rounded-lg p-4 mt-8' type='submit'>
                         Create Campaign
