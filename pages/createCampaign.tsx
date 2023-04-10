@@ -66,8 +66,8 @@ const target= e.target as typeof e.target & {
      // target.elements.Target.value,
      //   new Date(target.elements.Deadline.value).getTime(),
     //    selectedNFT.metadata.image ],
-      await contract?.call("createCampaign", selectedNFT.metadata.address,target.elements.Title.value ,
-            target.elements.Description.value, target.elements.Target.value,new Date(target.elements.Deadline.value).getTime() ,selectedNFT.metadata.image )
+      await contract?.call("createCampaign", [selectedNFT.metadata.address,target.elements.Title.value ,
+            target.elements.Description.value, target.elements.Target.value,new Date(target.elements.Deadline.value).getTime() ,selectedNFT.metadata.image], )
     //{
      //       onSuccess(data, variables, context) {
      //           console.log("Success : ", data, variables, context);
