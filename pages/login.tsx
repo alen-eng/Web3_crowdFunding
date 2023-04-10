@@ -1,10 +1,7 @@
 
-import Head from 'next/head'
-import link from 'next/link';
 import { useRouter } from 'next/router';
 import { NextRequest, NextResponse } from 'next/server';
 import { useState } from 'react';
-//import {Router} from 'next/router';
 import{ FaFacebookF,
   FaLinkedinIn,
   FaGoogle,
@@ -68,7 +65,7 @@ else if(res.status===401){
                 <a href="a" className="border-2 border-gray-200 rounded-full p-3 mx-1">
                   <FaGoogle className="text-sm" />
                 </a>
-                 </div>{/* Social Login section*/}
+                 </div>
                  <p className="text-gray-400 my-3">or use yor email account</p>
                  <form onSubmit={handleLogin} method='post'>
                  <div className="flex flex-col items-center">
@@ -100,7 +97,7 @@ else if(res.status===401){
                  </form>
               </div>       
           </div>
-            {/* sign in section */}
+            
            <div className="w-3/5 bg-[url('/assets/education.jpg')]  text-white rounded-tr-2xl rounded-br-2xl py-36 px-12">
             <h2 className="text-3xl font-bold mb-2">Hello,Friend!</h2>
             <div className="border-2 w-10 border-white inline-block mb-2"></div>
@@ -114,8 +111,7 @@ else if(res.status===401){
              >
               Sign Up
               </a>
-            </div>
-            {/* sign up section */}   
+            </div>   
             </div>
            </main>
           </div>
