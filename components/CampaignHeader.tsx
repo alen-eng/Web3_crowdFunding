@@ -2,7 +2,6 @@ import React from 'react'
 import { useAddress , useDisconnect ,useContract,useContractRead, useMetamask } from '@thirdweb-dev/react';
 import Link from 'next/link';
 import {ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/react/24/solid';
-import   {BellIcon, ShoppingCartIcon} from  '@heroicons/react/24/outline';
 import Image from 'next/image';
 type Props = {}
 
@@ -87,8 +86,6 @@ function Header({}: Props) {
                 }
       </section>
       <hr/>
-      {/* <section className='flex py-3 space-x-6 text-xs md:text-sm whitespace-nowrap justify-center px-6'>
-      </section> */}
     </div>
   );
 }
