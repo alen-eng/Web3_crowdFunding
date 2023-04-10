@@ -37,11 +37,6 @@ function createCampaign({}: Props) {
   const networkMismatch = useNetworkMismatch();
   const [,switchNetwork]= useNetwork();
   const {mutateAsync: createCampaign,isLoading } = useContractWrite(contract,'createCampaign');
-
-    //   const {
-    //     mutate: createAuctionListing,
-    //     isLoading : isLoadingAuction,
-    //     error : errorAuction } = useCreateAuctionListing(contract);
    
 const handleCreateCampaign= async (e: FormEvent<HTMLFormElement>) =>{
     e.preventDefault();
@@ -65,23 +60,22 @@ const target= e.target as typeof e.target & {
       target.elements.Target.value ,
         new Date(target.elements.Deadline.value).getTime() ,
         selectedNFT.metadata.image]);
-    createCampaign([
-    selectedNFT.metadata.address,
-    target.elements.Title.value ,
-     target.elements.Description.value ,
-      target.elements.Target.value ,
+    createCampaign([selectedNFT.metadata.address,
+    target.elements.Title.value,
+     target.elements.Description.value,
+      target.elements.Target.value,
         new Date(target.elements.Deadline.value).getTime(),
-        selectedNFT.metadata.image]);
-      //  {
-        //    onSuccess(data, variables, context) {
-        //        console.log("Success : ", data, variables, context);
-        //        router.push('/');
-         //   },
-          //  onError(error, variables, context) {
-          //      console.log('Error : ', error, variables, context);
-          //  },
-        //}
-   // );
+        selectedNFT.metadata.image ],
+        {
+            onSuccess(data, variables, context) {
+                console.log("Success : ", data, variables, context);
+                router.push('/');
+            },
+            onError(error, variables, context) {
+                console.log('Error : ', error, variables, context);
+            },
+        }
+    );
 
 };
   return (
