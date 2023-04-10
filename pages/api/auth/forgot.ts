@@ -1,7 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next"
-import { hash,compare } from "bcryptjs"
 import User from "../../../models/user"
-import { IUser } from "../../../types"
 import jwt from "jsonwebtoken"
 import nodemailer from "nodemailer"
 import { connectToMongoDB } from "../../../utils/connection"
