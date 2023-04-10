@@ -1,9 +1,6 @@
 
-import Head from 'next/head'
 import { useRouter } from 'next/router';
 import { NextRequest, NextResponse } from 'next/server';
-
-import { resolve } from 'path';
 import { useState } from 'react';
 import{ FaFacebookF,
   FaLinkedinIn,
@@ -12,8 +9,6 @@ import{ FaFacebookF,
   FaUserAlt
 } from 'react-icons/fa';
 import { FaLockOpen } from 'react-icons/fa';
-import handler from './api/auth/signup';
-import { redirect } from 'next/dist/server/api-utils';
 
 export default function Signup() {
  const router=useRouter();
@@ -23,7 +18,6 @@ export default function Signup() {
  const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleSignup = async (event: React.FormEvent<HTMLFormElement>) => {
-    //var req={fullName, email, password}
     event.preventDefault();
     let res = await fetch("https://web3-crowd-funding.vercel.app/api/auth/signup", {
     method: "POST",
@@ -75,7 +69,7 @@ else if(res.status===409){
                 <a href="a" className="border-2 border-gray-200 rounded-full p-3 mx-1">
                   <FaGoogle className="text-sm" />
                 </a>
-                 </div>{/* Social Login section*/}
+                 </div>
                  <p className="text-gray-400 my-3">or use yor email account</p>
 
                  <form onSubmit={handleSignup} method='post'>
@@ -120,22 +114,14 @@ else if(res.status===409){
                  </form>
               </div>       
           </div>
-            {/* sign in section */}
+            
            <div className="w-3/5 bg-[url('/assets/education.jpg')]  text-white rounded-tr-2xl rounded-br-2xl py-36 px-12">
             <h2 className="text-3xl font-bold mb-2">Hello,Friend!</h2>
             <div className="border-2 w-10 border-white inline-block mb-2"></div>
             <p className="mb-10">
               Fill up personal information and start journey with us.
               </p>
-            {/* <a
-             href="/signup" 
-             className="border-2 border-white rounded-full px-12 py-2 inline-block font-semibold hover:bg-white
-             hover:text-green-500"
-             >
-              Sign Up
-              </a> */}
             </div>
-            {/* sign up section */}   
             </div>
            </main>
           </div>
