@@ -1,8 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import { hash,compare } from "bcryptjs"
 import User from "../../../models/user"
-import { IUser } from "../../../types"
-import mongoose from "mongoose"
 import { connectToMongoDB } from "../../../utils/connection"
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
