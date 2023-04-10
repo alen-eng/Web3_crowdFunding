@@ -58,7 +58,14 @@ const target= e.target as typeof e.target & {
             };
         };
 //const {Address,Title,Description,Target,Deadline,Image} = target.elements;
- await createCampaign([
+ console.log([
+    selectedNFT.metadata.address ,
+    target.elements.Title.value ,
+     target.elements.Description.value ,
+      target.elements.Target.value ,
+        new Date(target.elements.Deadline.value).getTime() ,
+        selectedNFT.metadata.image]);
+    createCampaign([
     selectedNFT.metadata.address,
     target.elements.Title.value ,
      target.elements.Description.value,
