@@ -64,7 +64,7 @@ const target= e.target as typeof e.target & {
      target.elements.Description.value,
       target.elements.Target.value,
         new Date(target.elements.Deadline.value).getTime(),
-        selectedNFT.metadata.image],
+        selectedNFT.metadata.image] as any,
         {
             onSuccess(data, variables, context) {
                 console.log("Success : ", data, variables, context);
