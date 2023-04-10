@@ -1,15 +1,11 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
 import CampaignHeader from '../components/CampaignHeader'
-import { useActiveListings,
-  useListings,
+import { 
    useContract ,
     MediaRenderer,
     useContractRead
   } from '@thirdweb-dev/react'
-import { ListingType } from '@thirdweb-dev/sdk'
-import { BanknotesIcon,WalletIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
 import { ethers } from 'ethers'
@@ -27,7 +23,6 @@ if(daysLeft(camp[5].toNumber()) as any > -1){
     story:camp[2],
     image:camp[3],
     target:camp[4],
-    //deadline:camp[5].toNumber(),
     amountCollected: ethers.utils.formatEther(camp.amountCollected.toString()),
     pId:i,
     remainingDays:daysLeft(camp[5].toNumber()), 
@@ -59,18 +54,6 @@ else cam=cam.filter((item:any)=>item!=null); }
             <Link 
             key={campaign.pId} 
             href= {`/campaign/${campaign.pId}`}
-             // pathname: `/campaign/[campaignId]`,
-              // query: {
-              //   remainingDays: campaign.remainingDays,
-              //   amountCollected: campaign.amountCollected, 
-              //   target: campaign.target,
-              //   image: campaign.image,
-              //   story: campaign.story,
-              //   title: campaign.title,
-              //   address: campaign.address,
-              // },
-           // }}
-            // as= {`/campaign/${campaign.pId}`} 
             className='flex flex-col bg-gray-200 card content-around hover:scale-105 transition-all duration-105 ease-out'
             >
             <div>
@@ -93,27 +76,9 @@ else cam=cam.filter((item:any)=>item!=null); }
                    </div>
                    
                 <div className='flex flex-row p-1 bg-[#fffceb] rounded'>
-                   {/* <WalletIcon className='w-8 h-8'/> */}
                    <Image src={'/thirdweb.png'} alt='Thirdweb' width={16} height={16}/>
                    <p className='pt-1 ml-4 text-md font-semibold'>{campaign.address.slice(0,8) +"..."+campaign.address.slice(-8)}</p>
                    </div>
-                   {/* <BsCashCoin size={30} className='bg-green-300 p-1 rounded'/> */}
-                     {/* <p>
-                      <span className='font-bold mr-1'>{campaign.buyoutCurrencyValuePerToken.displayValue}</span>
-                      {campaign.buyoutCurrencyValuePerToken.symbol}
-                     </p>  */}
-
-                    {/* <div className={`flex items-center space-x-1 justify-end text-xs border w-fit ml-auto p-2
-                     rounded-lg text-white ${campaign.type === ListingType.Direct ? 'bg-blue-500': "bg-red-500" } ` }
-                     >
-                      <p>
-                        { campaign.type === ListingType.Direct ? "Buy Now" : "Auction"}
-                        </p>
-                        { campaign.type === ListingType.Direct ? (
-                          <BanknotesIcon className='h-4'/> ) : <ClockIcon className='h-4'/>
-                        }
-                      
-                  </div> */}
                 </div>
               </div>
             </Link>
