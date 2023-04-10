@@ -66,12 +66,12 @@ const target= e.target as typeof e.target & {
         new Date(target.elements.Deadline.value).getTime() ,
         selectedNFT.metadata.image]);
     createCampaign([
-    selectedNFT.metadata.address,
-    target.elements.Title.value ,
-     target.elements.Description.value,
-      target.elements.Target.value,
-        new Date(target.elements.Deadline.value).getTime(),
-        selectedNFT.metadata.image] as any,
+    selectedNFT.metadata.address as any,
+    target.elements.Title.value as any ,
+     target.elements.Description.value as any,
+      target.elements.Target.value as any,
+        new Date(target.elements.Deadline.value).getTime() as any,
+        selectedNFT.metadata.image as any],
         {
             onSuccess(data, variables, context) {
                 console.log("Success : ", data, variables, context);
