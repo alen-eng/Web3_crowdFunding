@@ -1,28 +1,16 @@
-import { UserCircleIcon } from '@heroicons/react/24/solid';
-import {BsCashCoin} from 'react-icons/bs';
+
 import { 
-   MediaRenderer,
    useContract ,
-   useListing,
    useNetwork,
    useNetworkMismatch,
-   useMakeBid,
-   useMakeOffer,
-   useOffers,
-   useBuyNow,
    useAddress,
-   useAcceptDirectListingOffer,
-   useContractWrite,
    useContractRead,
    useMetamask,
    useDisconnect
   } from '@thirdweb-dev/react';
-import { ListingType, NATIVE_TOKENS } from '@thirdweb-dev/sdk';
 import { ethers } from 'ethers';
 import { useRouter } from 'next/router';
 import React, { FormEvent, useEffect, useState } from 'react';
-//import Countdown from 'react-countdown';
-import Header from '../../components/Header';
 import network from '../../utils/network';
 import { calculateBarPercentage, daysLeft } from '../../utils';
 import CountBox from '../../components/CountBox';
@@ -30,36 +18,20 @@ type Props = {}
 
 function CampaignCard (){
     const router= useRouter();
-    //const address= useAddress();
     const connectwithMetamask = useMetamask();
     const disconnect = useDisconnect();
     const useraddress = useAddress();
 
     const {campaignId} = router.query as 
     { campaignId: string,
-     // amountCollected:string, remainingDays: string,target:string,image:string,story:string,title:string,address:string
     };
  
    const [ , switchNetwork] = useNetwork();
     const networkMismatch=useNetworkMismatch();
 
     const { contract } = useContract(process.env.NEXT_PUBLIC_CROWDFUNDING_CONTRACT);
-   // const { mutateAsync: donateToCampaign,isLoading:loading, } = useContractWrite(contract, "donateToCampaign",)
     const { data: donators, isLoading} =  useContractRead(contract, "getDonators",campaignId as any)
     const { data: campaign,isLoading:load } = useContractRead(contract, "campaigns",campaignId as any)
-    //const [campaignDetail, setcampaignDetail] = useState({});
-   //   const [remDate, setremDate] = useState({});
-    // const cam = campaign?.map((campaign:any,) => {
-    //   return Object.assign({}, {
-    //       address:campaign.address,
-    //       title:campaign.title,
-    //       story:campaign.story,
-    //       image:campaign.image,
-    //       target:campaign.target,
-    //       deadline:campaign.deadline,
-    //       amountCollected:campaign.amountCollected,
-    //       remainingDays:daysLeft(campaign.deadline),
-    //     });});
     var target=0;
     var address='';
     var title='';
@@ -71,7 +43,6 @@ function CampaignCard (){
     var donation:any = [];
     if(donators !== undefined){
       for(var i=0;i<donators[0].length;i++){
-       // console.log(donators[0][i]);
       donator.push(donators[0][i]);
       donation.push(ethers.utils.formatEther(donators[1][i].toString()));
      }
@@ -85,29 +56,8 @@ function CampaignCard (){
       story=campaign[2];
       image=campaign[3];
       remainingDays=daysLeft(campaign[5].toNumber());
-      //console.log(ethers.utils.formatEther(campaign[6].toString()))
       amountCollected=ethers.utils.formatEther(campaign[6].toString());
    }
-      //console.log(amountCollected);
-    //  console.log(mytarget);
-    //let campaigns = {campaign:campaign};
-   // let campaignss= {address:campaigns.campaign[0]};
-  // const obj= Object.assign({}, {
-  //       address:campaign[0],
-  //       title: campaign.title,
-  //       story:campaign.story,
-  //       image:campaign.image,    
-  // });
-  // var address1= campaigns.campaign[0];
-  // var title= campaigns.campaign[1];
-  // var story= campaigns.campaign[2];
-  // var image= campaigns.campaign[3];
-  //    console.log(title);
-    //console.log(campaign[0]);
-     //   var remdays = daysLeft(campaign[5].toNumber());
-    //console.log(campaign[3]);
-  //  setcampaignDetail(campaign);
-//console.log(target);
 
 const handleDonate= async (e: FormEvent<HTMLFormElement>) =>{
   e.preventDefault();
@@ -121,13 +71,6 @@ const target= e.target as typeof e.target & {
           };
       };
 
-      //console.log(target.elements.Amount.value);
-//const {Address,Title,Description,Target,Deadline,Image} = target.elements;
-//donateToCampaign([campaignId],address, target.elements.Amount.value),
-  //target.elements.Amount.value as any
- // ),
-//console.log(campaignId ,target.elements.Amount.value as any),
-//const  {contract } = useContract(process.env.NEXT_PUBLIC_CROWDFUNDING_CONTRACT);
  contract?.call('donateToCampaign', campaignId as any, { value: ethers.utils.parseEther(target.elements.Amount.value.toString())}),
       {
           onSuccess(data:any, variables:any, context:any) {
