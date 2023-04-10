@@ -1,17 +1,8 @@
-
-import Head from 'next/head'
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { NextRequest, NextResponse } from 'next/server';
 import { useState } from 'react';
-
-import{ FaFacebookF,
-  FaLinkedinIn,
-  FaGoogle,
+import{
   FaRegEnvelopeOpen,
 } from 'react-icons/fa';
-import { FaLockOpen } from 'react-icons/fa';
-
 
 export default function Verify() {
   const [password, setPassword] = useState('');
@@ -91,7 +82,6 @@ export default function Verify() {
              </form>
               </div>       
           </div>
-            {/* sign in section */}
            <div className="w-3/5 bg-[url('/assets/education.jpg')]  text-white rounded-tr-2xl rounded-br-2xl py-36 px-12">
             <h2 className="text-3xl font-bold mb-2">Hello,Friend!</h2>
             <div className="border-2 w-10 border-white inline-block mb-2"></div>
