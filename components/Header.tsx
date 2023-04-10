@@ -1,21 +1,13 @@
 import React from 'react'
-import { useAddress , useDisconnect , useMetamask } from '@thirdweb-dev/react';
 import Link from 'next/link';
  import {DevicePhoneMobileIcon} from '@heroicons/react/24/solid';
-// import   {BellIcon, ShoppingCartIcon} from  '@heroicons/react/24/outline';
-import logo from './assets/logo.png';
 import Image from 'next/image';
 type Props = {}
 
 function Header({}: Props) {
-    // const connectwithMetamask = useMetamask();
-    // const disconnect = useDisconnect();
-    // const address = useAddress();
     
   return (
     <div className='max-w-7xl mx-auto py-2 pl-16'>
-    {/* <nav className='flex justify-between mt-2'>
-      </nav> */}
       
       <section className='flex items-center space-x-2 py-3'>
         <div className='h-16 w-16 xl:mr-32 sm:w-28 mr-8 md:w-44 md:mr-16 cursor-pointer flex-shrink-0'>
@@ -44,21 +36,6 @@ function Header({}: Props) {
            </Link>
           </div>
       </section>
-      
-      {/* <section className='flex py-3 space-x-6 text-xs md:text-sm whitespace-nowrap justify-center px-6'>
-         <p className='link'>Home</p>
-        <p className='link'>Electronics</p>
-        <p className='link'>Computers</p>
-        <p className='link hidden sm:inline'>Video Games</p>
-        <p className='link hidden sm:inline'>Home & Garden</p>
-        <p className='link hidden md:inline'>Health & Beauty</p>
-        <p className='link hidden lg:inline'>Collectibles & Art</p>
-        <p className='link hidden lg:inline'>Books</p>
-        <p className='link hidden lg:inline'>Music</p>
-        <p className='link hidden xl:inline'>Deals</p>
-        <p className='link hidden xl:inline'>Other</p>
-        <p className='link'>More</p> 
-      </section> */}
     </div>
   );
 }
