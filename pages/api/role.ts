@@ -8,8 +8,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method === "POST") {
         if (!req.body) return res.status(400).json({ status:400, })
         const { address} = JSON.parse(req.body)
-        
-        Role.create({
+        const requestExists = await Role.findOne({ address })
+        if(requestExists!=null){ return res.status(408).json({ status:408, })}
+       else Role.create({
             address:address
          }).then(data => {
             return res.status(201).json({
