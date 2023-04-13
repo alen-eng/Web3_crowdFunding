@@ -27,6 +27,12 @@ function Header({}: Props) {
         if(res.status==201){
           alert("Role request added successfully")
         }
+          else if(res.status===400){
+           alert("Please connect your wallet")
+          }
+          else if(res.status===408){
+            alert("Role request already added. Don't do it again!")
+           }
         else{
           alert("Role request failed")
         }
