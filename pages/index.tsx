@@ -1,13 +1,9 @@
-import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/Header'
 import imageslide from '../Data/imagedata'
-import campeignImages from '../Data/campeignImages.js'
 import Link from 'next/link';
 import React, { useState } from 'react'
-import { PartialClaimConditionInputSchema } from '@thirdweb-dev/sdk'
 import { useRouter } from 'next/router'
-
 
 
 export default function Home() {
@@ -75,13 +71,11 @@ const router= useRouter()
               <div
               >
                  <h1 className=' text-4xl font-bold '>How we're making a <span className='text-rose-400 font-serif'>difference</span></h1>
-                 <p className='py-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc malesuada accumsan pellentesque. it amet, consectetur adipiscing elit. Nunc
+                 <p className='py-4 text-gray-600 font-semibold'>Nowadays people are becoming voracious to contribute to the society but usually end up in the wrong hands. We are here to make sure that your contribution reaches the right hands.
                  </p>
                  {textshow ?
-                    <p className='py-4 '>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc malesuada accumsan pellentesque.
-                       Nam tempor, nunc non suscipit dignissim, sem ligula m
-                       aximus diam, quis condimentum ante tortor at sem. Sed rutrum lorem in
-                       diam hendrerit semper</p> : ''}
+                    <p className='py-4 text-gray-600 font-semibold'>To increase the transparency and trustability, we came up with the new technology of blockchain .This application provides
+                        trust b/w the users and donors. This help reduce the corruption and increase the efficiency of the donation process.</p> : ''}
                  {textshow ? '' :
                     <button className='h-10 w-32  text-black font-semibold rounded-full border-black border-2  hover:bg-gray-200' onClick={() => { settextshow(true) } }>
                        Show more </button>}
@@ -101,13 +95,13 @@ const router= useRouter()
                        <div className='overflow-hidden'>
                           <Image src={'/assets/acheivement.jpg'} alt='img' height={10} width={380} className='hover:scale-105 transition-all duration-105 ease-out' />
                           <div className=' h-8 w-24 p-1 bg-[#00A693] text-white text-center font-medium rounded-full absolute ml-2 -mt-4  '>
-                             Health
+                            Health
                           </div>
                        </div>
                        <div>
-                          <h1 className='text-xl font-bold pl-4 pt-9'>Health text</h1>
-                          <p className='p-4'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt 
-                          mi a elit mattis, nec sollicitudin neque posuere. Praesent at ante ut turpis imperdiet lacinia. 
+                          <h1 className='text-xl font-bold pl-4 pt-9'>Health care</h1>
+                          <p className='p-4'> Providing a helping hand to financially support those who are unable to afford day to day
+                          medical expenses which range from several thousands to lakhs. 
                          </p>
                        </div>
                     </div>
@@ -120,9 +114,9 @@ const router= useRouter()
                           </div>
                        </div>
                        <div>
-                       <h1 className='text-xl font-bold pl-4 pt-9'>Food text</h1>
-                          <p className='p-4 '> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt mi a elit mattis, nec 
-                          sollicitudin neque posuere. Praesent at ante ut turpis imperdiet lacinia.  </p>
+                       <h1 className='text-xl font-bold pl-4 pt-9'>Feeding the hunger</h1>
+                          <p className='p-4 '> As per the studies conducted in 2019-2020 around 10% of world population suffer from under nourishment .
+                          It will be a great platform to support them.  </p>
                        </div>
                     </div>
 
@@ -134,9 +128,9 @@ const router= useRouter()
                           </div>
                        </div>
                        <div className='px-2'>
-                       <h1 className='text-xl font-bold pl-4 pt-9'>Education text</h1>
-                          <p className='p-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincid
-                          unt mi a elit mattis, nec sollicitudin neque posuere. Praesent at ante ut turpis imperdiet lacinia.  </p>
+                       <h1 className='text-xl font-bold pl-4 pt-9'>Education to Everyone</h1>
+                          <p className='p-4'>Education and knowledge are the key to everything. Through education we could 
+                          empower the needies . We focus on developing of communities through quality education. </p>
                        </div>
                     </div>
 
@@ -157,9 +151,9 @@ const router= useRouter()
                  <div className='flex flex-row pt-12 transition-x-10'>
                     <div className='max-w-sm ml-5 rounded-lg border border-black bg-white hover:scale-105 transition-all duration-105 ease-out'>
                        <div className='p-4'>
-                          <p className='leading-7 italic'> " This is a  Badge issued by IBM for successful completion of the digital course 'What is Data Scie
-                           nce'.Course was accessed through COURSERA.his is a  Badge issued by IBM for successful completion his is a  Badge issued by I
-                           BM for successful completion "
+                          <p className='leading-7 italic'>" Decentralized behaviour of this application  cuts down the role of a third party hence reducing 
+                            a lot of frauds prevailing among such platforms.This actually  helps in increasing the efficiency and trust between donators and 
+                            the needies since it has no mediators. "
                          </p>
                        </div>
                        <div className='flex flex-row pt-8 pb-4'>
@@ -173,9 +167,9 @@ const router= useRouter()
 
                     <div className='max-w-sm ml-5 rounded-lg border border-black bg-white  hover:scale-105 transition-all duration-105 ease-out'>
                        <div className='p-4'>
-                          <p className='leading-7 italic'> " This is a  Badge issued by IBM for successful completion of the digital course 'What is Data Science'.
-                          Course was accessed through COURSERA. his is a  Badge issued by IBM for successful completion his is a  Badge issued by IBM f
-                          or successful completion "</p>
+                          <p className='leading-7 italic'> " This platform really help to directing charity funds in the right amount to the right cause, and helping deserved & needy 
+                          without loosing a  single penny to the middlemen. No excess amount will not be transfered to the needy person in other words cannot make transaction after limit. 
+                          "</p>
                        </div>
                        <div className='flex flex-row pt-8 pb-4'>
                           <Image src={'/assets/acheivement.jpg'} alt='img' height={10} width={70}  />
@@ -188,9 +182,10 @@ const router= useRouter()
 
                     <div className='max-w-sm ml-5 rounded-lg border border-black bg-white  hover:scale-105 transition-all duration-105 ease-out'>
                        <div className='p-4'>
-                          <p className='leading-7 italic'> " This is a  Badge issued by IBM for successful completion of the digital course 'What is Data Science'.
-                          Course was accessed through COURSERA.his is a  Badge issued by IBM for successful completion his is a  Badge issued by IBM for succ
-                          essful completion "  </p>
+                          <p className='leading-7 italic'> " This is a very innovative charity programme which had brought back hope to humanity, since
+                          it had gained trust of donators as well as needies such as me myself. I think decentralized applications has a huge potential in tech world.
+                           I bless this venture all the success in the future.
+                           " </p>
                        </div>
                        <div className='flex flex-row pt-8 pb-4' >
                           <Image src={'/assets/acheivement.jpg'} alt='img' height={10} width={70}  />
@@ -261,8 +256,8 @@ const router= useRouter()
        <div className='flex flex-col -mt-24 sm:ml-28 md:ml-40 lg:ml-52 xl:ml-96  rounded px-16 py-6 bg-orange-500 w-2/4 '>
          <h1 className=' text-center text-3xl font-bold text-white'>  Want to be a Volunteer??</h1>
          <div className='flex flex-row'>
-          <p className=' text-center text-lg font-thin  text-white pt-3 '>Fill the form ASAP . We will reach you out shortly!!
-           AP . We will reach you out shortly!!  We will reach you out  We will reach you out  We will reach you out</p> <Link href={'/volunteer'}>
+          <p className=' text-center text-lg font-thin  text-white pt-3 '>In the path towards building transparent platform
+           we would like to take like-minded people with us. Wanna join as volunteer?? fill out the form!!</p> <Link href={'/volunteer'}>
           <button  className=' text-center text-white w-32 h-8 ml-2 mt-4 px-2 rounded-full transition-all hover:scale-105 border-2 border-white'>Volunteer</button>
           </Link>
           </div>
