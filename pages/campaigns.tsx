@@ -54,12 +54,11 @@ else cam=cam.filter((item:any)=>item!=null); }
             <Link 
             key={campaign.pId} 
             href= {`/campaign/${campaign.pId}`}
-            className='flex flex-col bg-gray-200 card content-around hover:scale-105 transition-all duration-105 ease-out'
+            className='flex bg-gray-200 card hover:scale-105 transition-all duration-105 ease-out'
             >
             <div>
-              <div className=' flex flex-col pb-2 items-center'>
-                <MediaRenderer className='' src={campaign.image}/>
-                </div>
+
+                <MediaRenderer className='' height='' src={campaign.image}/>
 
                 <div className='pt-2 space-y-4 '>
                    <div>
