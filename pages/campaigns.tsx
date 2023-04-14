@@ -62,7 +62,7 @@ else cam=cam.filter((item:any)=>item!=null); }
 
                 <div className='pt-2 space-y-4 '>
                    <div>
-                     <h2 className='text-xl font-bold truncate'>
+                     <h2 className='text-xl font-bold'>
                       {campaign.title}
                      </h2>
                      <hr/>
