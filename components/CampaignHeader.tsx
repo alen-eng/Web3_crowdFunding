@@ -47,14 +47,14 @@ function Header({}: Props) {
             <button onClick={()=>{connectwithMetamask()}} className='connectWalletBtn'>Connect your wallet </button>
             )}
 
-          <p className='hidden md:inline-flex font-serif'>Charitytex </p>
-           <p className='hidden md:inline-flex'>fdfdfdfdvgxfghfxhxfhbff</p> 
+          <p className='hidden md:inline-flex text-green-600 text-lg font-bold font-serif'> Lighten </p>
+           <p className='hidden md:inline-flex font-semibold text-lg font-serif text-orange-300'> the darkened lives </p> 
         </div>
 
       <div className='flex items-center space-x-6 text-sm'>
-        <p className='headerLink'>food</p>
-        <p className='headerLink'>Health</p>
-        <p className='headerLink'>Education</p>
+        <p className='headerLink font-semibold'>food</p>
+        <p className='headerLink font-semibold'>Health</p>
+        <p className='headerLink font-semibold'>Education</p>
         {data==true ?(
         <Link href='/campaignRequest'>
         <button className='bg-blue-500 text-white font-bold py-2 px-4 rounded cursor-pointer'>Campaign request</button>
