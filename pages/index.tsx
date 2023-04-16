@@ -157,10 +157,10 @@ const router= useRouter()
                          </p>
                        </div>
                        <div className='flex flex-row pt-8 pb-4'>
-                          <Image src={'/assets/acheivement.jpg'} alt='img' height={10} width={70} className='rounded-full' />
+                          <Image src={'/assets/steve.jpg'} alt='img' height={10} width={70} className='ml-2 rounded-full' />
                           <div className='px-2'>
-                          <p className='text-lg font-bold'>Alen Tom</p>
-                           <p className='text-md text-green-300 font-medium'>Designation</p>
+                          <p className='text-lg font-bold'>Steve Harvy</p>
+                           <p className='text-md text-green-300 font-medium'>Donator</p>
                           </div>
                        </div>
                     </div>
@@ -172,10 +172,10 @@ const router= useRouter()
                           "</p>
                        </div>
                        <div className='flex flex-row pt-8 pb-4'>
-                          <Image src={'/assets/acheivement.jpg'} alt='img' height={10} width={70}  />
+                          <Image src={'/assets/jofri.jpg'} alt='img' height={10} width={70} className='ml-2 rounded-full' />
                           <div className='px-2'>
-                          <p className='text-lg font-bold'>Sachin  Stanly</p>
-                           <p className='text-md text-green-300 font-medium'>Designation</p> 
+                          <p className='text-lg font-bold'>Jofri Alex</p>
+                           <p className='text-md text-green-300 font-medium'>Donator</p> 
                           </div>
                        </div>
                     </div>
@@ -188,9 +188,9 @@ const router= useRouter()
                            " </p>
                        </div>
                        <div className='flex flex-row pt-8 pb-4' >
-                          <Image src={'/assets/acheivement.jpg'} alt='img' height={10} width={70}  />
+                          <Image src={'/assets/priya.jpg'} alt='img' height={10} width={70} className='ml-2 rounded-full' />
                           <div className='px-2'>
-                           <p className='text-lg font-bold'>Abin Abraham</p>
+                           <p className='text-lg font-bold'>Priya Agarval</p>
                            <p className='text-md text-green-300 font-medium'>Designation</p>
                           </div>
                        </div>
