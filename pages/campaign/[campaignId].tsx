@@ -93,7 +93,7 @@ const target= e.target as typeof e.target & {
               { useraddress ? (
                 <button onClick={disconnect} className='connectWalletBtn'> Hi, {useraddress.slice(0,5)+ "...."+ useraddress.slice(-6)} </button>
              ) : (
-            <button onClick={()=>connectwithMetamask} className='connectWalletBtn'>Connect your wallet </button>
+            <button onClick={()=>{connectwithMetamask();}} className='connectWalletBtn'>Connect your wallet </button>
             )}</div>
             <div className="flex  md:flex-row justify-center mt-10 xl:space-x-96">
              <div className=" flex flex-col pt-8">
