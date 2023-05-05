@@ -38,7 +38,7 @@ for(var i=0;i<cam.length;i++){
   }
 } 
 if(count==cam.length){
-cam==null;
+cam=null;
 }
 else cam=cam.filter((item:any)=>item!=null); }
 console.log(cam);
