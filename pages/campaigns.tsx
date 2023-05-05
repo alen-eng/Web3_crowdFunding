@@ -41,14 +41,14 @@ if(count==cam.length){
 cam=null;
 }
 else cam=cam.filter((item:any)=>item!=null); }
-console.log(cam);
+
   return (
     <div>
   <CampaignHeader/>
     <main className='max-w-6xl mx-auto py-2 px-6'>
       {loadingCampaigns ? ( <p className='text-center animate-pulse text-blue-500'>
         Loading   Campaigns...</p>
-        ): cam ==null || cam[0].length==3 ? (<div><h1 className=' text-green-400 text-center'>Sorry Don't have an active Campaign!!</h1></div>) 
+        ): cam ==null ? (<div><h1 className=' text-green-400 text-center'>Sorry Don't have an active Campaign!!</h1></div>) 
         : ( <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-auto'>
             {cam?.map( (campaign:any) => (
             <Link 
