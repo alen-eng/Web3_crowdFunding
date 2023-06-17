@@ -11,6 +11,7 @@ import { FaLockOpen } from 'react-icons/fa';
 
 
 export default function Login() {
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -86,13 +87,17 @@ else if(res.status===401){
                       className="mr-1"/>Remeber me </label>
                       <a href="/forgot" className="text-x5 underline">Forgot Password</a>
                     </div>
-                    <button
-                    type='submit'
-                     className="border-2 border-green-500 text-green-500 rounded-full px-12 py-2 inline-block font-semibold hover:bg-green-500
-                     hover:text-white"
-                     >
-                      Sign In    
-                      </button>
+                   {loading ?
+                     <button
+                      className=" bg-green-500 text-white text-center rounded-full px-12 py-2 inline-block font-semibold animate-pulse "
+                      > Loading..</button> :
+                     <button
+                     onClick={()=>{setLoading(true)}}
+                     type='submit'
+                      className="border-2 border-green-500 text-green-500 rounded-full px-12 py-2 inline-block font-semibold hover:bg-green-500
+                      hover:text-white "
+                      >Sign In</button>
+                     } 
                  </div>
                  </form>
               </div>       
