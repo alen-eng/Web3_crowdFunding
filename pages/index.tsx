@@ -93,7 +93,7 @@ const router= useRouter()
                  <div className='flex flex-row pt-12'>
                     <div className='max-w-sm ml-5 rounded-lg border-2 border-slate-300'>
                        <div className='overflow-hidden'>
-                          <Image src={'/assets/acheivement.jpg'} alt='img' height={10} width={380} className='hover:scale-105 transition-all duration-105 ease-out' />
+                          <Image src={'/assets/health2.jpg'} alt='img' height={10} width={380} className='hover:scale-105 transition-all duration-105 ease-out' />
                           <div className=' h-8 w-24 p-1 bg-[#00A693] text-white text-center font-medium rounded-full absolute ml-2 -mt-4  '>
                             Health
                           </div>
@@ -108,7 +108,7 @@ const router= useRouter()
 
                     <div className='max-w-sm ml-5 rounded-lg border-2 border-slate-200'>
                        <div className=' overflow-hidden'>
-                          <Image src={'/assets/acheivement.jpg'} alt='img' height={10} width={380}  className='hover:scale-105 transition-all duration-105 ease-out'/>
+                          <Image src={'/assets/food2.jpg'} alt='img' height={10} width={380}  className='hover:scale-105 transition-all duration-105 ease-out'/>
                           <div className='h-8 w-24 p-1 bg-[#00A693] text-white text-center font-medium rounded-full absolute ml-2 -mt-4'  >
                              Food
                           </div>
@@ -122,7 +122,7 @@ const router= useRouter()
 
                     <div className='max-w-sm ml-5 rounded-lg border-2 border-slate-200'>
                        <div className='overflow-hidden'>
-                          <Image src={'/assets/acheivement.jpg'} alt='img' height={10} width={380}  className='hover:scale-105 transition-all duration-105 ease-out' />
+                          <Image src={'/assets/education2.jpg'} alt='img' height={10} width={380}  className='hover:scale-105 transition-all duration-105 ease-out' />
                           <div className='px-2 h-8 w-24 p-1 bg-[#00A693] text-white text-center font-medium rounded-full absolute ml-2 -mt-4'>
                              Education
                           </div>
