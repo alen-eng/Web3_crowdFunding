@@ -47,9 +47,8 @@ function CampaignCard (){
       donation.push(ethers.utils.formatEther(donators[1][i].toString()));
      }
     }
-      console.log(donator);
-      console.log(donation);
-   if(campaign !== undefined){
+      
+   if(campaign !== undefined && campaign !== null){
       target=campaign[4].toNumber();
       address=campaign[0];
       title=campaign[1];
