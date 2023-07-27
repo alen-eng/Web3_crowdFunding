@@ -63,7 +63,8 @@ else cam=cam.filter((item:any)=>item!=null); }
            description:campaign.description,
            amount:campaign.target,
            amountCollected:campaign.amountCollected,
-           remainingDays:campaigns.remainingDays
+           remainingDays:campaign.remainingDays,
+           image:campaign.image
         }
     }}
             className='flex bg-gray-200 card hover:scale-105 transition-all duration-105 ease-out'
