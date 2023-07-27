@@ -52,13 +52,13 @@ function CampaignCard (){
     }
       
    if(campaign !== undefined ){
-      target=campaign[4].toNumber();
-      address=campaign[0];
-      title=campaign[1];
-      story=campaign[2];
-      image=campaign[3];
-      remainingDays=daysLeft(campaign[5].toNumber());
-      amountCollected=ethers.utils.formatEther(campaign[6].toString());
+      //target=campaign[4].toNumber();
+     // address=campaign[0];
+      //title=campaign[1];
+     // story=campaign[2];
+     // image=campaign[3];
+      //remainingDays=daysLeft(campaign[5].toNumber());
+      //amountCollected=ethers.utils.formatEther(campaign[6].toString());
    }
 
 const handleDonate= async (e: FormEvent<HTMLFormElement>) =>{
