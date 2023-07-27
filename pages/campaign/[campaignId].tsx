@@ -82,6 +82,7 @@ const target= e.target as typeof e.target & {
         };
 
       };
+   console.log(image);
 
        return(
          <div>
