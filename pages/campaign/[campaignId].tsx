@@ -22,18 +22,9 @@ function CampaignCard (){
     const disconnect = useDisconnect();
     const useraddress = useAddress();
 
-    //const {campaignId} = router.query as 
-    //{ campaignId: string,
-    //};
-   const query = router.query;
-   const campaignId = query.id
-    const target = query.amount;
-    const image= query.image;
-    const address = query.address;
-    const remainingDays= query.remaingDays;
-    const amountCollected = query.amountCollected;
-    const title=query.title;
-    const story = query.description;
+    const {campaignId} = router.query as 
+    { campaignId: string,
+    };
  
    const [ , switchNetwork] = useNetwork();
     const networkMismatch=useNetworkMismatch();
@@ -41,13 +32,13 @@ function CampaignCard (){
     const { contract } = useContract(process.env.NEXT_PUBLIC_CROWDFUNDING_CONTRACT);
     const { data: donators, isLoading} =  useContractRead(contract, "getDonators",campaignId as any)
     const { data: campaign,isLoading:load } = useContractRead(contract, "campaigns",campaignId as any)
-   // var target=0;
-   // var address='';
-   // var title='';
-   // var story='';
-   // var image='';
-   // var remainingDays='';
-    //var amountCollected='';
+    var target=0;
+    var address='';
+    var title='';
+    var story='';
+    var image='';
+    var remainingDays='';
+    var amountCollected='';
    
     var donator: any[] = [];
     var donation:any = [];
@@ -60,13 +51,13 @@ function CampaignCard (){
     }
       
    if(campaign !== undefined ){
-      //target=campaign[4].toNumber();
-     // address=campaign[0];
-      //title=campaign[1];
-     // story=campaign[2];
-     // image=campaign[3];
-      //remainingDays=daysLeft(campaign[5].toNumber());
-      //amountCollected=ethers.utils.formatEther(campaign[6].toString());
+      target=campaign[4].toNumber();
+      address=campaign[0];
+      title=campaign[1];
+      story=campaign[2];
+      image=campaign[3];
+      remainingDays=daysLeft(campaign[5].toNumber());
+      amountCollected=ethers.utils.formatEther(campaign[6].toString());
    }
 
 const handleDonate= async (e: FormEvent<HTMLFormElement>) =>{
