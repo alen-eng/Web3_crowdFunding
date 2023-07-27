@@ -22,9 +22,10 @@ function CampaignCard (){
     const disconnect = useDisconnect();
     const useraddress = useAddress();
 
-    const {campaignId} = router.query as 
-    { campaignId: string,
-    };
+    //const {campaignId} = router.query as 
+    //{ campaignId: string,
+    //};
+   const {campaignId , title, address , description ,amount , amountCollected, remainingDays , image } = router.query
  
    const [ , switchNetwork] = useNetwork();
     const networkMismatch=useNetworkMismatch();
@@ -32,16 +33,23 @@ function CampaignCard (){
     const { contract } = useContract(process.env.NEXT_PUBLIC_CROWDFUNDING_CONTRACT);
     const { data: donators, isLoading} =  useContractRead(contract, "getDonators",campaignId as any)
     const { data: campaign,isLoading:load } = useContractRead(contract, "campaigns",campaignId as any)
-    var target=0;
-    var address='';
-    var title='';
-    var story='';
-    var image='';
-    var remainingDays='';
-    var amountCollected='';
+   // var target=0;
+   // var address='';
+   // var title='';
+   // var story='';
+   // var image='';
+   // var remainingDays='';
+    //var amountCollected='';
+    var target=amount;
+    var address=address;
+    var title=title;
+    var story=description;
+    var image=image;
+    var remainingDays=remainingDays;
+    var amountCollected=amountCollected;
     var donator: any[] = [];
     var donation:any = [];
-   console.log(campaign);
+   
     if(donators !== undefined){
       for(var i=0;i<donators[0].length;i++){
       donator.push(donators[0][i]);
