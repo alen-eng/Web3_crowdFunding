@@ -25,7 +25,7 @@ function CampaignCard (){
     //const {campaignId} = router.query as 
     //{ campaignId: string,
     //};
-   const {campaignId , title, address , description ,amount , amountCollected, remainingDays , image } = router.query
+   const {campaignId , title, address , story ,target , amountCollected, remainingDays , image } = router.query
  
    const [ , switchNetwork] = useNetwork();
     const networkMismatch=useNetworkMismatch();
@@ -40,13 +40,7 @@ function CampaignCard (){
    // var image='';
    // var remainingDays='';
     //var amountCollected='';
-    var target=amount;
-    var address=address;
-    var title=title;
-    var story=description;
-    var image=image;
-    var remainingDays=remainingDays;
-    var amountCollected=amountCollected;
+   
     var donator: any[] = [];
     var donation:any = [];
    
