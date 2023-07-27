@@ -41,6 +41,7 @@ function CampaignCard (){
     var amountCollected='';
     var donator: any[] = [];
     var donation:any = [];
+   console.log(campaign);
     if(donators !== undefined){
       for(var i=0;i<donators[0].length;i++){
       donator.push(donators[0][i]);
@@ -48,7 +49,7 @@ function CampaignCard (){
      }
     }
       
-   if(campaign !== undefined && campaign !== null){
+   if(campaign !== undefined ){
       target=campaign[4].toNumber();
       address=campaign[0];
       title=campaign[1];
@@ -82,7 +83,7 @@ const target= e.target as typeof e.target & {
         };
 
       };
-   console.log(image);
+  
 
        return(
          <div>
