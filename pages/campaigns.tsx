@@ -53,20 +53,7 @@ else cam=cam.filter((item:any)=>item!=null); }
             {cam?.map( (campaign:any) => (
             <Link 
             key={campaign.pId} 
-           // href= {`/campaign/${campaign.pId}`}
-                href={{
-        pathname: `/campaign/${campaign.pId}`,
-        query: {
-            id: campaign.pId,
-            title: campaign.title,
-            address:campaign.address,
-           description:campaign.description,
-           amount:campaign.target,
-           amountCollected:campaign.amountCollected,
-           remainingDays:campaign.remainingDays,
-           image:campaign.image
-        }
-    }}
+            href= {`/campaign/${campaign.pId}`}   
             className='flex bg-gray-200 card hover:scale-105 transition-all duration-105 ease-out'
             >
             <div>
