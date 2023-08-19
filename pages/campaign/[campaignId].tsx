@@ -71,7 +71,7 @@ const target= e.target as typeof e.target & {
   elements: {Amount:{value:number},
           };
       };
-
+ console.log( ethers.utils.parseEther(target.elements.Amount.value.toString()));
  contract?.call('donateToCampaign', [ { value: ethers.utils.parseEther(target.elements.Amount.value.toString()) } ]),
       {
           onSuccess(data:any, variables:any, context:any) {
