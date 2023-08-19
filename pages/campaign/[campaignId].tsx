@@ -30,7 +30,7 @@ function CampaignCard (){
     const { contract } = useContract(process.env.NEXT_PUBLIC_CROWDFUNDING_CONTRACT);
     const { data: donators, isLoading} =  useContractRead(contract, "getDonators",campaignId as any)
     //const { data: campaign,isLoading:load } = useContractRead(contract, "campaigns",campaignId as any)
-   const { data: campaign,isLoading:load } = contract.call("campaigns", [{campaignId as any}])
+   const { data: campaign,isLoading:load } = contract?.call("campaigns", [{campaignId as any}])
 
    //console.log(donators);
    console.log(campaign);
