@@ -32,6 +32,7 @@ function CampaignCard (){
     const { contract } = useContract(process.env.NEXT_PUBLIC_CROWDFUNDING_CONTRACT);
     const { data: donators, isLoading} =  useContractRead(contract, "getDonators",campaignId as any)
     const { data: campaign,isLoading:load } = useContractRead(contract, "campaigns",campaignId as any)
+   console.log(campaign);
     var target=0;
     var address='';
     var title='';
@@ -41,7 +42,7 @@ function CampaignCard (){
     var amountCollected='';
    
     var donator: any[] = [];
-    var donation:any = [];
+    var donation:any[] = [];
    
     if(donators !== undefined){
       for(var i=0;i<donators[0].length;i++){
@@ -72,7 +73,7 @@ const target= e.target as typeof e.target & {
           };
       };
 
- contract?.call('donateToCampaign', args:[ campaignId as any, { value: ethers.utils.parseEther(target.elements.Amount.value.toString())} ]),
+ contract?.call('donateToCampaign',  campaignId as any, { value: ethers.utils.parseEther(target.elements.Amount.value.toString())}),
       {
           onSuccess(data:any, variables:any, context:any) {
               console.log("Success : ", data, variables, context);
