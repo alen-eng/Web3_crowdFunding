@@ -72,7 +72,7 @@ const target= e.target as typeof e.target & {
           };
       };
 
- contract?.call('donateToCampaign', {value: ethers.utils.parseEther(target.elements.Amount.value.toString()) as any }),
+ contract?.call('donateToCampaign', {value: ethers.utils.parseEther(target.elements.Amount.value.toString()) }),
       {
           onSuccess(data:any, variables:any, context:any) {
               console.log("Success : ", data, variables, context);
