@@ -16,7 +16,7 @@ import { calculateBarPercentage, daysLeft } from '../../utils';
 import CountBox from '../../components/CountBox';
 type Props = {}
 
-function CampaignCard async(){
+function CampaignCard (){
     const router= useRouter();
     const connectwithMetamask = useMetamask();
     const disconnect = useDisconnect();
@@ -29,10 +29,10 @@ function CampaignCard async(){
 
     const { contract } = useContract(process.env.NEXT_PUBLIC_CROWDFUNDING_CONTRACT);
     const { data: donators, isLoading} =  useContractRead(contract, "getDonators",campaignId as any)
-    //const { data: campaign,isLoading:load } =  useContractRead(contract, "campaigns",campaignId as any)
-   const { data: campaign,isLoading:load } = await contract?.call("campaigns", [{campaignId as any}])
+    const { data: campaign,isLoading:load } =  useContractRead(contract, "campaigns",campaignId as any)
+   //const { data: campaign,isLoading:load } = await contract?.call("campaigns", [{campaignId as any}])
 
-   //console.log(donators);
+   console.log(donators);
    console.log(campaign);
    
     var target=0;
