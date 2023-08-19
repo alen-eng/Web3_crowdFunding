@@ -22,18 +22,16 @@ function CampaignCard (){
     const disconnect = useDisconnect();
     const useraddress = useAddress();
 
-    const {campaignId} = router.query as 
-    { campaignId: string,
-    };
- 
+    const {campaignId} = router.query as { campaignId: string };
+    console.log(campaignId);
    const [ , switchNetwork] = useNetwork();
     const networkMismatch=useNetworkMismatch();
 
     const { contract } = useContract(process.env.NEXT_PUBLIC_CROWDFUNDING_CONTRACT);
     const { data: donators, isLoading} =  useContractRead(contract, "getDonators",campaignId as any)
     const { data: campaign,isLoading:load } = useContractRead(contract, "campaigns",campaignId as any)
-   console.log(campaignId+"Hellow");
-   console.log(campaign);
+   
+   
     var target=0;
     var address='';
     var title='';
