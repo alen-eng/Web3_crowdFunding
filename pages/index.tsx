@@ -37,28 +37,14 @@ const router= useRouter()
     <div>
         <Header />
 
-		<div className="relative w-1080 h-[500px] mx-auto">
-        <Image
-         src={imageslide[currentslide].url}
-         alt="Bgimage"
-         fill
-         priority
-         className="object-cover mx-auto grayscale rounded"
-         onClick={() =>
-         currentslide + 1 < 3
-         ? setcurrentslide(currentslide + 1)
-         : setcurrentslide(0)
-         }
-         />
-
-        {/* <div className='relative w-full h-[500px] mx-auto'>
+      <div className='relative mx-auto'>
            <Image
               src={imageslide[currentslide].url}
 			  width={1080} 
-			  height={10}
+			  height={500}
               alt='Bgimage'
               onClick={() => currentslide + 1 < 3 ? setcurrentslide(currentslide + 1) : setcurrentslide(0)}
-              className=' mx-auto grayscale  rounded ' /> */}
+              className=' mx-auto grayscale  rounded ' /> 
 
            <p className=' text-blue-400 text-4xl font-bold absolute xl:top-16 sm:top-12  2xl:left-1/4 xl:left-96 lg:left-44 md:left-32 sm:left-16 font-serif '>New Hope for Future </p>
            <p className=' text-green-400 text-xl mt-3 font-bold absolute xl:top-24 sm:top-20  2xl:left-1/4 xl:left-96 lg:left-44 md:left-32 sm:left-16 max-w-2xl'>
