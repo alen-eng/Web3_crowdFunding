@@ -40,9 +40,9 @@ const router= useRouter()
         <div className='relative mx-auto '>
            <Image
               src={imageslide[currentslide].url}
+			  width={1080} 
+			  height={10}
               alt='Bgimage'
-			  placeholder='blur'
-			  sizes='(max-width: 768px) 100vw, (max-width: 1080px) 50vw, 33vw'
               onClick={() => currentslide + 1 < 3 ? setcurrentslide(currentslide + 1) : setcurrentslide(0)}
               className=' mx-auto grayscale  rounded ' />
 
