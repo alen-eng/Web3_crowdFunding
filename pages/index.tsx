@@ -37,7 +37,7 @@ const router= useRouter()
     <div>
         <Header />
 
-		<div className="relative w-full h-[500px] mx-auto">
+		<div className="relative w-1080 h-[500px] mx-auto">
         <Image
          src={imageslide[currentslide].url}
          alt="Bgimage"
